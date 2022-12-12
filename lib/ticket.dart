@@ -180,7 +180,7 @@ class _TicketInfoState extends State<TicketInfo> {
     return ListView(
       children: [
         Padding(
-          padding: EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 20),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: Card(
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(16)),
