@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:sizer/sizer.dart';
 
 class Ticket extends StatefulWidget {
   const Ticket({Key? key}) : super(key: key);
@@ -51,55 +52,55 @@ class _TicketState extends State<Ticket> {
           ],
         ),
         drawer: Drawer(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
+          shape: const RoundedRectangleBorder(
+            borderRadius: const BorderRadius.only(
               topRight: Radius.circular(20),
               bottomRight: Radius.circular(20),
             ),
           ),
           child: ListView(
             children: <Widget>[
-              Padding(padding: EdgeInsets.only(top: 240)),
+              const Padding(padding: const EdgeInsets.only(top: 240)),
               ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.home,
                   color: Colors.black,
                   size: 25,
                 ),
-                title: Text('Home'),
+                title: const Text('Home'),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
               ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.confirmation_number,
                   color: Colors.black,
                   size: 25,
                 ),
-                title: Text('Ticket'),
+                title: const Text('Ticket'),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
               ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.qr_code,
                   color: Colors.black,
                   size: 25,
                 ),
-                title: Text('Code'),
+                title: const Text('Code'),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
               ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.person,
                   color: Colors.black,
                   size: 25,
                 ),
-                title: Text('Profile'),
+                title: const Text('Profile'),
                 onTap: () {
                   Navigator.pop(context);
                 },
@@ -115,49 +116,49 @@ class _TicketState extends State<Ticket> {
               child: Stack(
                 alignment: AlignmentDirectional.bottomEnd,
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(8),
+                  const Padding(
+                    padding: EdgeInsets.all(8),
                   ),
                   Image.asset('images/4.png',
                       fit: BoxFit.cover,
                       width: double.infinity,
                       height: double.infinity),
-                  TicketInfo(),
+                  const TicketInfo(),
                 ],
               ),
             ),
           ],
         ),
         bottomNavigationBar: SalomonBottomBar(
-          itemPadding: EdgeInsets.symmetric(vertical: 13, horizontal: 22),
+          itemPadding: const EdgeInsets.symmetric(vertical: 13, horizontal: 22),
           currentIndex: _currentIndex,
           onTap: (i) => setState(() => _currentIndex = i),
           items: [
             /// Home
             SalomonBottomBarItem(
-              icon: Icon(Icons.home),
-              title: Text("Home"),
+              icon: const Icon(Icons.home),
+              title: const Text("Home"),
               selectedColor: Colors.blue,
             ),
 
             /// Likes
             SalomonBottomBarItem(
-              icon: Icon(Icons.confirmation_number),
-              title: Text("Tickets"),
+              icon: const Icon(Icons.confirmation_number),
+              title: const Text("Tickets"),
               selectedColor: Colors.pink,
             ),
 
             /// Search
             SalomonBottomBarItem(
-              icon: Icon(Icons.qr_code),
-              title: Text("Code"),
+              icon: const Icon(Icons.qr_code),
+              title: const Text("Code"),
               selectedColor: Colors.orange,
             ),
 
             /// Profile
             SalomonBottomBarItem(
-              icon: Icon(Icons.person),
-              title: Text("Profile"),
+              icon: const Icon(Icons.person),
+              title: const Text("Profile"),
               selectedColor: Colors.teal,
             ),
           ],
@@ -180,7 +181,8 @@ class _TicketInfoState extends State<TicketInfo> {
     return ListView(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding:
+              const EdgeInsets.only(bottom: 5, top: 20, left: 20, right: 20),
           child: Card(
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(16)),
@@ -190,10 +192,10 @@ class _TicketInfoState extends State<TicketInfo> {
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(top: 10, bottom: 35),
                 ),
-                ListTile(
+                const ListTile(
                   visualDensity: VisualDensity.compact,
                   contentPadding: EdgeInsets.only(left: 20),
                   leading: Image(
@@ -210,7 +212,7 @@ class _TicketInfoState extends State<TicketInfo> {
                     ),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   visualDensity: VisualDensity.compact,
                   isThreeLine: false,
                   horizontalTitleGap: 0,
@@ -226,12 +228,12 @@ class _TicketInfoState extends State<TicketInfo> {
                     ),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   visualDensity: VisualDensity.compact,
                   isThreeLine: false,
-                  contentPadding: EdgeInsets.only(left: 20),
+                  contentPadding: const EdgeInsets.only(left: 20),
                   leading: Image(
-                    image: AssetImage('images/5.png'),
+                    image: const AssetImage('images/5.png'),
                     width: 50,
                     height: 50,
                   ),
@@ -244,9 +246,9 @@ class _TicketInfoState extends State<TicketInfo> {
                     ),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   contentPadding: EdgeInsets.only(top: 22, left: 20),
-                  title: Text(
+                  title: const Text(
                     'Date & Time:',
                     style: TextStyle(
                       fontSize: 20,
@@ -264,20 +266,20 @@ class _TicketInfoState extends State<TicketInfo> {
                   ),
                 ),
                 Padding(
-                  padding:
-                      EdgeInsets.only(top: 30, left: 20, right: 20, bottom: 5),
+                  padding: const EdgeInsets.only(
+                      top: 30, left: 20, right: 20, bottom: 5),
                   child: Row(
                     children: <Widget>[
                       Expanded(
                         child: SizedBox(
                           child: Card(
                             color: Colors.grey[200],
-                            shape: RoundedRectangleBorder(
+                            shape: const RoundedRectangleBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(16)),
                             ),
                             shadowColor: Colors.grey[200],
-                            child: ListTile(
+                            child: const ListTile(
                               isThreeLine: false,
                               visualDensity: VisualDensity.compact,
                               title: Text(
@@ -296,13 +298,13 @@ class _TicketInfoState extends State<TicketInfo> {
                       Expanded(
                         child: SizedBox(
                           child: Card(
-                            shape: RoundedRectangleBorder(
+                            shape: const RoundedRectangleBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(16)),
                             ),
                             shadowColor: Colors.grey[200],
                             color: Colors.grey[200],
-                            child: ListTile(
+                            child: const ListTile(
                               visualDensity: VisualDensity.compact,
                               title: Text(
                                 textAlign: TextAlign.center,
@@ -320,18 +322,18 @@ class _TicketInfoState extends State<TicketInfo> {
                       Expanded(
                         child: SizedBox(
                           child: Card(
-                            shape: RoundedRectangleBorder(
+                            shape: const RoundedRectangleBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(16)),
+                                  const BorderRadius.all(Radius.circular(16)),
                             ),
                             shadowColor: Colors.grey[200],
                             color: Colors.grey[200],
-                            child: ListTile(
+                            child: const ListTile(
                               visualDensity: VisualDensity.compact,
                               title: Text(
                                 textAlign: TextAlign.center,
                                 'Seat 15',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
                                   color: Colors.black,
@@ -344,9 +346,9 @@ class _TicketInfoState extends State<TicketInfo> {
                     ],
                   ),
                 ),
-                ListTile(
-                  contentPadding: EdgeInsets.only(top: 16, left: 20),
-                  title: Text(
+                const ListTile(
+                  contentPadding: const EdgeInsets.only(top: 16, left: 20),
+                  title: const Text(
                     'Your Name:',
                     style: TextStyle(
                       fontSize: 20,
@@ -354,26 +356,26 @@ class _TicketInfoState extends State<TicketInfo> {
                       color: Colors.grey,
                     ),
                   ),
-                  subtitle: Text(
+                  subtitle: const Text(
                     'Irham Khairul',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
                   ),
                 ),
-                Divider(
+                const Divider(
                   color: Colors.grey,
                   height: 30,
                 ),
-                Image(
-                  image: AssetImage('images/barcode.png'),
+                const Image(
+                  image: const AssetImage('images/barcode.png'),
                   width: 2000,
                   height: 50,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     left: 16,
                     right: 16,
                   ),
@@ -384,14 +386,14 @@ class _TicketInfoState extends State<TicketInfo> {
                         iconSize: 20,
                         splashRadius: 20,
                         onPressed: () {},
-                        icon: Icon(Icons.info_outline_rounded),
+                        icon: const Icon(Icons.info_outline_rounded),
                         color: Colors.grey,
                       ),
                       IconButton(
                         iconSize: 20,
                         splashRadius: 20,
                         onPressed: () {},
-                        icon: Icon(Icons.download_rounded),
+                        icon: const Icon(Icons.download_rounded),
                         color: Colors.grey,
                       ),
                     ],
